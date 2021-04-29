@@ -11,9 +11,11 @@
         </div>
         <div class="row">
             <div class="buttons d-grid gap-3">
-                <button type="button" class="btn btn-outline-success" routerLink="/new-form">New Form</button>
-                <button type="button" class="btn btn-outline-success" routerLink="/create-user">New User</button>
-                <button type="button" class="btn btn-outline-success" routerLink="/">Statistics</button>
+                <button type="button" class="btn btn-outline-success" *ngIf="isLogin()" routerLink="/new-form">New Form</button>
+                <button type="button" class="btn btn-outline-success" *ngIf="isLogin()" routerLink="/create-user">New User</button>
+                <button type="button" class="btn btn-outline-success" *ngIf="isLogin()" routerLink="/">Statistics</button>
+                <button type="button" class="btn btn-outline-success" *ngIf="!isLogin()" routerLink="/board">View forms</button>
+                <button type="button" class="btn btn-outline-success" *ngIf="!isLogin()" routerLink="/login">Login</button>
             </div>
         </div>
     </div>

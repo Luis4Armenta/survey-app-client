@@ -10,6 +10,10 @@ import { BoardComponent } from './pages/board/board.component';
 import { AboutmeComponent } from './components/shared/aboutme/aboutme.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { NewFormComponent } from './new-form/new-form.component';
+import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { NewFormComponent } from './new-form/new-form.component';
     BoardComponent,
     AboutmeComponent,
     CreateUserComponent,
-    NewFormComponent
+    NewFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MdbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

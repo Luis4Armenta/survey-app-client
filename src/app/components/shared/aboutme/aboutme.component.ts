@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-aboutme',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutmeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly autService: AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  isLogin(): boolean {
+    return this.autService.loggedIn()
   }
 
 }
